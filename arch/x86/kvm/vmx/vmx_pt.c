@@ -557,6 +557,10 @@ static long vmx_pt_ioctl(struct file *filp, unsigned int ioctl, unsigned long ar
 		case KVM_VMX_PT_GET_TOPA_SIZE:
 			r = (TOPA_MAIN_SIZE + TOPA_FALLBACK_SIZE);
 			break;
+		case KVM_VMX_PT_RESET:
+			r = vmx_pt_get_data_size(vmx_pt_config);
+			topa_reset(vmx_pt_config);
+			break;
 	}
 	spin_unlock(&vmx_pt_config->spinlock);
 	return r;

@@ -1829,6 +1829,8 @@ struct kvm_hyperv_eventfd {
 #define KVM_VMX_PT_ENABLE_MTF			_IO(KVMIO,	0xf0)	
 #define KVM_VMX_PT_DISABLE_MTF		_IO(KVMIO,	0xf1)	
 
+#define KVM_VMX_PT_RESET _IO(KVMIO, 0xf2)
+
 
 
 #endif /* __LINUX_KVM_H */
